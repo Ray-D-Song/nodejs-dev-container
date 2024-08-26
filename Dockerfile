@@ -1,8 +1,5 @@
 # nodejs
 # version: v14 -> v20
-
-ARG VER=14
-
 FROM debian:latest
 
 RUN apt-get update && apt-get install -y \
@@ -12,7 +9,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN mkdir -p /usr/local/nodejs
 
-ARG VER
+ARG VER=14
 
 RUN if [ "$VER" = "14" ]; then \
       wget -O node.tar.xz https://nodejs.org/dist/v14.21.3/node-v14.21.3-linux-arm64.tar.xz; \
